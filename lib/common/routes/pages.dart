@@ -7,9 +7,11 @@ import 'package:udemy_bloc_app/Screens/SignIn_view/signIn_view.dart';
 import 'package:udemy_bloc_app/Screens/Welcome_view/Bloc/welcome_bloc.dart';
 import 'package:udemy_bloc_app/Screens/Welcome_view/welcome_view.dart';
 import 'package:udemy_bloc_app/Screens/application/application_page.dart';
+import 'package:udemy_bloc_app/Screens/home_view/home_view.dart';
 import 'package:udemy_bloc_app/common/routes/names.dart';
 
 import '../../Screens/application/Bloc/application_bloc.dart';
+import '../../Screens/home_view/Bloc/home_page_bloc.dart';
 import '../../global.dart';
 
 class PageEntity {
@@ -39,6 +41,11 @@ class AppPages {
         route: AppRoutes.APPLICATION,
         page: const ApplicationPage(),
         bloc: BlocProvider(create: (context) => ApplicationBloc()),
+      ),
+      PageEntity(
+          route:AppRoutes.HOME,
+          page:HomeView(),
+          bloc:BlocProvider(create: (_) => HomePageBloc())
       ),
     ];
   }

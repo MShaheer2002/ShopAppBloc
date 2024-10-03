@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:udemy_bloc_app/Screens/home_view/home_view.dart';
 
 Widget buildPage(int index){
   List<Widget> _widget = [
-    Center(child: Text("Home"),),
+    HomeView(),
     Center(child: Text("Search"),),
     Center(child: Text("Course"),),
     Center(child: Text("Chat"),),
