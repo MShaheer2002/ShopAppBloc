@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:udemy_bloc_app/common/services/storage_service/storage.dart';
+import 'package:udemy_bloc_app/common/values/constant.dart';
+
+import '../../../global.dart';
 
 class WelcomeWidgets {
   Column page1(
@@ -36,7 +41,7 @@ class WelcomeWidgets {
                   duration: Duration(microseconds: 500),
                   curve: Curves.decelerate);
             } else {
-              //   jump to new page
+              Global.storageService.setBool(Constant.STORAGE_DEVICE_FIRST_OPEN_KEY, true);
               Navigator.pushNamedAndRemoveUntil(
                   context, "/SignIn", (_) => false);
             }
