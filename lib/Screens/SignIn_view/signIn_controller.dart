@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../common/routes/names.dart';
+import '../../common/values/constant.dart';
+import '../../global.dart';
 import 'Bloc/sign_in_bloc.dart';
 
 class SigninController {
@@ -27,6 +29,7 @@ class SigninController {
           if (!credentials.user!.emailVerified) {}
           var user = credentials.user;
           if (user != null) {
+            Global.storageService.setBool(Constant.LOGED_IN, true);
             Navigator.of(context).pushNamedAndRemoveUntil(
                 AppRoutes.APPLICATION, (route) => false);
           } else {}

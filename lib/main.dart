@@ -6,7 +6,7 @@ import 'package:udemy_bloc_app/common/routes/pages.dart';
 import 'package:udemy_bloc_app/global.dart';
 
 Future<void> main() async {
-  Global.init();
+  await Global.init();
   runApp(const MyApp());
 }
 

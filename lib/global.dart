@@ -4,12 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:udemy_bloc_app/common/services/storage_service/storage.dart';
 
 class Global {
-  static late StorageService _storageService;
+  static late StorageService storageService;
 
   static Future init() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
 
-    _storageService = await StorageService().init();
+    storageService = await StorageService().init();
   }
 }
