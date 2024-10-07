@@ -13,7 +13,7 @@ class ApplicationPage extends StatefulWidget {
 }
 
 class _ApplicationPageState extends State<ApplicationPage> {
-  int _index = 0;
+
 
   @override
   Widget build(BuildContext context) {

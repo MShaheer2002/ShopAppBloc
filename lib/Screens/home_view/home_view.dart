@@ -17,82 +17,82 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(),
-      body: BlocBuilder<HomePageBloc, HomePageState>(
-        builder: (context, state) {
-          return CustomScrollView(
-            slivers: [
-              SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: 25,
-                  ),
-                  sliver: SliverToBoxAdapter(
-                      child: homePageText(
-                          "Hello,", color: AppColors.primaryThreeElementText,
-                          top: 20)
-                  )
+      body: CustomScrollView(
+        slivers: [
+          // hello
+          SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 0,
+                horizontal: 25,
               ),
-              SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: 25,
-                  ),
-                  sliver: SliverToBoxAdapter(
-                    child: homePageText(
-                        "Dbestech", color: AppColors.primaryText, top: 5),
-                  )
-              ),
-              SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: 25,
-                  ),
-                  sliver: SliverToBoxAdapter(
-                    child: searchView(),
-                  )
-              ),
+              sliver: SliverToBoxAdapter(
+                  child: homePageText("Hello,",
+                      color: AppColors.primaryThreeElementText, top: 20))),
 
-              SliverPadding(
+          // shaheer
+          SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 0,
+                horizontal: 25,
+              ),
+              sliver: SliverToBoxAdapter(
+                child: homePageText("Shaheer",
+                    color: AppColors.primaryText, top: 5),
+              )),
+
+          // search bar
+          SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 0,
+                horizontal: 25,
+              ),
+              sliver: SliverToBoxAdapter(
+                child: searchView(),
+              )),
+
+          // slider
+          BlocBuilder<HomePageBloc, HomePageState>(
+            buildWhen: (previous, current) => previous.index != current.index,
+            builder: (context, state) {
+              return SliverPadding(
                   padding: EdgeInsets.symmetric(
                     vertical: 0,
                     horizontal: 25,
                   ),
                   sliver: SliverToBoxAdapter(
                     child: sliderView(context, state),
-                  )
-              ),
-              SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: 25,
-                  ),
-                  sliver: SliverToBoxAdapter(
-                      child: menuView(context, state)
-                  )
-              ),
+                  ));
+            },
+          ),
 
-              SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 25,
-                  ),
-                  sliver: SliverGrid(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 15,
-                        crossAxisSpacing: 15,
-                        childAspectRatio: 1.6,
-                      ),
-                      delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          return gridView();
-                        },
-                        childCount: 6,
-                      ))),
+          // menu text and tags
+          SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 0,
+                horizontal: 25,
+              ),
+              sliver: SliverToBoxAdapter(child: menuView())),
 
-            ],
-          );
-        },
+          // grid view
+          SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 25,
+              ),
+              sliver: SliverGrid(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                    childAspectRatio: 1.6,
+                  ),
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      return gridView();
+                    },
+                    childCount: 6,
+                  ))),
+        ],
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:udemy_bloc_app/common/services/storage_service/storage.dart';
+
 import 'package:udemy_bloc_app/common/values/constant.dart';
 
 import '../../../global.dart';

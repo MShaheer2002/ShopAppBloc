@@ -198,7 +198,7 @@ Widget _slidersContainer({String path = "assets/icons/Art.png"}) {
   );
 }
 
-Widget menuView(BuildContext context, state) {
+Widget menuView() {
   return Column(
     children: [
       Container(

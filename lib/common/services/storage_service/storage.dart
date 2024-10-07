@@ -29,5 +29,9 @@ class StorageService{
     return _preferences.getBool(Constant.LOGED_IN) ?? false;
   }
 
+  Future<bool> remove(String key) async {
+    return await _preferences.remove(key);
+  }
+
 
 }

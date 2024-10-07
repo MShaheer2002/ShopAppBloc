@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:udemy_bloc_app/Screens/Regsitration_view/Bloc/registration_bloc.dart';
-import 'package:udemy_bloc_app/Screens/Regsitration_view/Bloc/registration_bloc.dart';
 import 'package:udemy_bloc_app/Screens/Regsitration_view/registration_controller.dart';
 
 import '../../common/common_widgets.dart';
