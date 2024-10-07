@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:udemy_bloc_app/Screens/home_view/home_view.dart';
+import 'package:udemy_bloc_app/Screens/profile_view/profile_view.dart';
+import 'package:udemy_bloc_app/Screens/setting_view/settings_view.dart';
 
 Widget buildPage(int index){
   List<Widget> _widget = [
@@ -7,7 +9,8 @@ Widget buildPage(int index){
     Center(child: Text("Search"),),
     Center(child: Text("Course"),),
     Center(child: Text("Chat"),),
-    Center(child: Text("Profile"),),
+    ProfileView(),
+
   ];
   return _widget[index];
 
